@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="oboi1">
+    <div class="bg1 none"></div>
+    <div class="bg2 none"></div>
+<div class="content" > 
+    <h4 class="color"> Score: <span class="score">0</span></h4>
+    <img src="dice.png" class="btn">
+    <div class="boxs firstBox" style="margin-left: 20px;">
+    </div>
+    <div class="boxs" style="margin-left:130px">1</div>
+    <div class="boxs" style="margin-left: 240px;">2</div>
+    <div class="boxs villain" style="margin-left: 350px;">3</div>
+    <div class="boxs" style="margin-left: 460px;">4</div>
+    <div class="boxs villain4" style="margin-left: 570px;">5</div>
+    <div class="boxs" style="margin-left: 680px;">6</div>
+    <div class="boxs" style="margin-left: 790px;">7</div>
+    <div class="boxs villain1" style="margin-left: 900px;">8</div>
+    <div class="boxs" style="margin-left: 1010px;">9</div>
+    <div class="boxs villain5" style="margin-left: 1120px;">10</div>
+    <div class="boxs" style="margin-left: 1230px;">11</div>
+    <div class="boxs villain3" style="margin-left: 1340px;">12</div>
+
+    <div class="boxs" style="margin-left: 1340px; margin-top: 110px;">13</div>
+    <div class="boxs" style="margin-left: 1340px; margin-top: 220px;">14</div>
+    <div class="boxs" style="margin-left: 1340px; margin-top: 330px;">15</div>
+
+    <div class="boxs villain2" style="margin-left: 1230px; margin-top: 330px;">16</div>
+    <div class="boxs" style="margin-left: 1120px; margin-top: 330px;">17</div>
+    <div class="boxs" style="margin-left: 1010px; margin-top: 330px;">18</div>
+    <div class="boxs exit3" style="margin-left: 900px; margin-top: 330px;">19</div>
+    <div class="boxs" style="margin-left: 790px; margin-top: 330px;">20</div>
+    <div class="boxs" style="margin-left: 680px; margin-top: 330px;">21</div>
+    <div class="boxs" style="margin-left: 570px; margin-top: 330px;">22</div>
+    <div class="boxs" style="margin-left: 460px; margin-top: 330px;">23</div>
+    <div class="boxs exit3" style="margin-left: 350px; margin-top: 330px;">24</div>
+    <div class="boxs" style="margin-left: 240px; margin-top: 330px;">25</div>
+    <div class="boxs" style="margin-left: 130px; margin-top: 330px;">26</div>
+    <div class="boxs" style="margin-left: 20px; margin-top: 330px;">27</div>
+
+    <div class="boxs exit1" style="margin-left: 20px; margin-top: 220px;">28</div>
+    <div class="boxs exit2" style="margin-left: 20px; margin-top: 110px;">29</div>
+    <div class="boxs exit2 none" style="margin-left: 20px; margin-top: 110px;">30</div>
+    <div class="boxs exit2 none" style="margin-left: 20px; margin-top: 110px;">31</div>
+    <div class="boxs exit2 none" style="margin-left: 20px; margin-top: 110px;">32</div>
+</div>
+    <script type="text/javascript">
+        let cube = document.querySelector('.btn');
+        let boxs = document.querySelectorAll(".boxs");
+        let first = document.querySelector(".firstBox");
+        let content = document.querySelector(".content");
+        let bg1 = document.querySelector(".bg1");
+        let bg2 = document.querySelector(".bg2");
+        let steps = 0;
+        let score = 150;
+        let scores = document.querySelector(".score");
+        let scorePoints = function(points){
+            score = score + points;
+            scores.innerHTML = score;
+        }
+        cube.onclick = function(){
+            scores.innerHTML = score;
+            boxs[steps].style.backgroundImage = "none";
+            let randNum = Math.random() * 6;
+            let roundNum = Math.round(randNum);
+            steps = steps + roundNum;
+            alert(" Иди на " + roundNum + " на клетку " + steps);
+            boxs[steps].style.backgroundImage = "url(warrior.png)";
+            boxs[steps].style.backgroundSize = '100% 100%';
+            score=steps
+            if(roundNum == 0){
+                scorePoints(0);
+            }
+            if(steps == 3){
+                scores.innerHTML = score;
+                alert("Странное существо охраняет вход можно напасть но лучше отойти, иди на 1 клетку назад");
+                steps = steps - 1;
+                boxs[3].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 5){
+                scores.innerHTML = score;
+                alert("Пожиратель прячется не стоит к нему идти, иди на 3 клетку назад");
+                steps = steps - 3;
+                boxs[5].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 8 ){
+                scores.innerHTML = score;
+                alert("Опасное чудище вам стало страшно и вы отошли, иди на 2 клетку назад");
+                steps = steps - 2;
+                boxs[8].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 10){
+                scores.innerHTML = score;
+                alert("Слизь тебе не стоит к нему идти, иди на 1 клетку назад");
+                steps = steps - 1;
+                boxs[10].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 12){
+                scores.innerHTML = score;
+                alert("Обезумевший лекарь пройду мимо, иди на 3 клетку назад");
+                steps = steps - 3;
+                boxs[12].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 16){
+                scores.innerHTML = score;
+                alert("Ты не смог пройти сквозь воина ада, иди на 3 клетки назад ");
+                steps = steps - 2;
+                boxs[16].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 19){
+                scores.innerHTML = score;
+                alert("ты случайно погиб ");
+                content.style.display = "none";
+                bg1.style.display = "block";
+            }
+            if(steps == 24){
+                scores.innerHTML = score;
+                alert("ты не смог спастись, иди на 2 клетки назад ");
+                steps = steps - 2;
+                boxs[24].style.backgroundImage = '';
+                boxs[steps].style.backgroundImage = "url(warrior.png)";
+                boxs[steps].style.backgroundSize = '100% 100%';
+            }
+            if(steps == 28){
+                scores.innerHTML = score;
+                alert("ты не смог найти выход и остался здесь до конца и стал новым монстром ");
+                content.style.display = "none";
+                bg1.style.display = "block";
+            }
+            if(steps == 29 ){
+                scores.innerHTML = score;
+                alert("ты нашёл выход! на свободу")
+                content.style.display = "none";
+                bg2.style.display = "block";
+            }
+            if(steps == 30 ){
+                scores.innerHTML = score;
+                alert("ты нашёл выход! на свободу")
+                content.style.display = "none";
+                bg2.style.display = "block";
+            }
+            if(steps == 31 ){
+                scores.innerHTML = score;
+                alert("ты нашёл выход! на свободу")
+                content.style.display = "none";
+                bg2.style.display = "block";
+            }
+            if(steps == 32 ){
+                scores.innerHTML = score;
+                alert("ты нашёл выход! на свободу")
+                content.style.display = "none";
+                bg2.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

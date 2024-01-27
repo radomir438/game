@@ -1,0 +1,78 @@
+.btn{
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+.boxs{
+    height: 100px;
+    width: 100px;
+    background-color: lavender;
+    border: solid;
+    position: absolute;
+}
+.firstBox{
+    background-image: url("warrior.png");
+    background-size: 100% 100%;
+}
+.villain{
+    background-image: url("monstr.png");
+    background-size: 100% 100%;
+}
+.villain1{
+    background-image: url("1monstr.png");
+    background-size: 100% 100%;
+}
+.villain2{
+    background-image: url("2monstr.png");
+    background-size: 100% 100%;
+}
+.villain3{
+    background-image: url("3monstr.png");
+    background-size: 100% 100%;
+}
+.villain4{
+    background-image: url("4monstr.png");
+    background-size: 100% 100%;
+}
+.villain5{
+    background-image: url("5monstr.png");
+    background-size: 100% 100%;
+}
+.exit1{
+    background-image: url("exit.png");
+    background-size: 100% 100%;
+}
+.exit2{
+    background-image: url("1exit.png");
+    background-size: 100% 100%;
+}
+.exit3{
+    background-image: url("3.exit.png");
+    background-size: 100% 100%;
+}
+.content{
+    background-image: url("oboi.png");
+    background-size: 100% 100%;
+}
+.bg1{
+    background-image: url("died.png");
+    display: none;
+    width: 1700px;
+    height: 700px;
+    background-size: 100% 100%;
+}
+.bg2{
+    background-image: url("exitreal.png");
+    width: 1700px;
+    height: 700px;
+    background-size: 100% 100%;
+}
+.color{
+    color: beige;
+}
+.none{
+    display: none;
+}
+.oboi1{
+    background-image: url("oboi1.png");
+}
